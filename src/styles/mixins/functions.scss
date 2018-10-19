@@ -1,0 +1,48 @@
+@import 'config.scss';
+
+/* BEM support functions 
+ --------------------------- */
+// 选择器转字符串
+@function selectorToString($selector) {
+  $selector: inspect($selector);
+  $selector: str-slice($selector, 2, -2); // 还是有点不懂为什么要选择2到-2
+  @return $selector;
+}
+
+// 判断是否包含修饰符 --
+@function containsModifier($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, $modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+// 判断是否含有状态类
+@function containsWhenFlag($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, '.' + $state-prefix) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+// 判断是否含有伪类
+@function containsPseudoClass($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, ':') {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+// 判断选择器是否含有特殊规则
+@function hitAllSpecialNestRule($selector) {
+  @return containsModifier($selector) or containsWhenFlag($selector) or containsPseudoClass($selector);
+}
