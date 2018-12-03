@@ -1,31 +1,27 @@
 # gorgeous-ui
 
-## Project setup
+## node版本 >= 10.12.0
+## npm版本 >= 6.4.1
+
+## 安装
 ```
-yarn install
+npm install
+```
+## 组件开发模式,在examples内写组件demo
+```
+npm run serve
 ```
 
-### Compiles and hot-reloads for development
+## 命令行创建组件
 ```
-yarn run serve
+make new <component>
 ```
-
-### Compiles and minifies for production
+ex: 
 ```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
+make new button
 ```
 
-### Lints and fixes files
+## 打包组件库,打包到lib目录下
 ```
-yarn run lint
-```
-
-### Run your unit tests
-```
-yarn run test:unit
+make lib
 ```
