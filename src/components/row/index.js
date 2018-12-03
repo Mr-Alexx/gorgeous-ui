@@ -1,7 +1,8 @@
-import GgRow from './row'
+import Row from './row'
 
-GgRow.install = function (Vue) {
-  Vue.component(GgRow.name, GgRow)
+/* istanbul ignore next */
+Row.install = function (Vue) {
+  Vue.component(Row.name, Row)
 }
 
-export default GgRow
+export default Row

@@ -1,9 +1,9 @@
 <template>
-  <div>button-group</div>
+  <div class="gg-button-group"></div>
 </template>
 
 <script>
-export default {
-  name: 'GgButtonGroup'
-}
+  export default {
+    name: 'GgButtonGroup'
+  }
 </script>

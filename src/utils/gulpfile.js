@@ -1,7 +1,7 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer') // 根据需要自动补全浏览器前缀
-const min = require('gulp-min')
+const min = require('gulp-minify-css')
 
 gulp.task('compile', () => {
   return gulp.src('../styles/theme-chalk/*.scss')
@@ -11,13 +11,13 @@ gulp.task('compile', () => {
       cascade: false
     }))
     .pipe(min())
-    .pipe(gulp.dest('../../lib'))
+    .pipe(gulp.dest('lib/theme-chalk')) // 相对于gulpfile.js文件的路径
 })
 
 gulp.task('font', () => {
   return gulp.src('../styles/fonts/**')
     .pipe(min())
-    .pipe(gulp.dest('../../lib/fonts'))
+    .pipe(gulp.dest('lib/theme-chalk/fonts'))
 })
 
 gulp.task('build', ['compile', 'font']) // 统一执行任务

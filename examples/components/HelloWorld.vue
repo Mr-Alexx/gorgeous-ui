@@ -2,7 +2,6 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>gorgeous-ui</h2>
-    <color-picker v-model="color" @change="handleChange"></color-picker>
   </div>
 </template>
 
