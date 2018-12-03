@@ -1,7 +1,8 @@
-import GgButtonGroup from './button-group.vue'
+import ButtonGroup from './button-group'
 
-GgButtonGroup.install = function (Vue) {
-  Vue.component(GgButtonGroup.name, GgButton)
+/* istanbul ignore next */
+ButtonGroup.install = function (Vue) {
+  Vue.component(ButtonGroup.name, ButtonGroup)
 }
 
-export default GgButtonGroup
+export default ButtonGroup

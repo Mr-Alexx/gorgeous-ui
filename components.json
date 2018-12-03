@@ -1,0 +1,6 @@
+{
+  "button": "./src/components/button/index.js",
+  "button-group": "./src/components/button-group/index.js",
+  "col": "./src/components/col/index.js",
+  "row": "./src/components/row/index.js"
+}

@@ -1,7 +1,8 @@
-import GgCol from './col'
+import Col from './col'
 
-GgCol.install = function (Vue) {
-  Vue.component(GgCol.name, GgCol)
+/* istanbul ignore next */
+Col.install = function (Vue) {
+  Vue.component(Col.name, Col)
 }
 
-export default GgCol
+export default Col

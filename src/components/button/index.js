@@ -1,7 +1,8 @@
-import GgButton from './button.vue'
+import Button from './button'
 
-GgButton.install = function (Vue) {
-  Vue.component(GgButton.name, GgButton)
+/* istanbul ignore next */
+Button.install = function (Vue) {
+  Vue.component(Button.name, Button)
 }
 
-export default GgButton
+export default Button
