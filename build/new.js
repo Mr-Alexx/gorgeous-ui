@@ -76,7 +76,7 @@ export default ${ComponentName}`
   {
     // 在styles的theme-chalk下创建 组件名.scss,定义初始内容
     filename: path.join('../../styles/theme-chalk', `${componentname}.scss`),
-    content: `@import "../commom/var.scss";
+    content: `@import "../common/var.scss";
 @import "../mixins/mixins.scss";
 
 @include b(${componentname}) {
