@@ -1,6 +1,167 @@
-@import "../commom/var.scss";
+@import "../common/var.scss";
 @import "../mixins/mixins.scss";
 
 @include b(button) {
+  appearance: none;
+  user-select: none;
+  outline: none;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: $--button-border-radius;
+  padding: $--button-padding-vertical $--button-padding-horizontal;
+  cursor: pointer;
+  font-size: $--button-font-size;
+  font-weight: $--button-font-weight;
+  transition: background-color $--button-transition, color $--button-transition, box-shadow $--button-transition;
+  color: $--button-default-color;
+  background-color: $--button-default-fill;
+  border: $--border-base;
+  border-color: $--button-default-border;
 
+  /* button之间相隔距离 */
+  & + & {
+    margin-left: 10px;
+  }
+
+  /* shadow状态 */
+  @include m(shadow) {
+    &:active {
+      box-shadow: 0 4px 4px -2px rgba(0,0,0,.2), 0 6px 8px 1px rgba(0,0,0,.14), 0 3px 8px 2px rgba(0,0,0,.12);
+    }
+  }
+
+  /* disabled */
+  @include when(disabled) {
+    &,
+    &:hover,
+    &:active {
+      cursor: not-allowed;
+      color: $--button-disabled-color;
+      border-color: $--button-disabled-border;
+    }
+  }
+  
+  /* 遍历type-color字典,动态构建不同type的样式 */
+  @each $type, $color in $--button-type-list {
+    @include m($type) {
+      /* 定义变量 */
+      $textColor: '';
+      $bgColor: '';
+      $borderColor: '';
+      $disalbedTextColor: '';
+      /* type为default和text的条件 */
+      $isDefaultOrText: $type == default or $type == text;
+      @if ($type == default) {
+        /* default的时候,不改字体色,和border色 */
+        $textColor: $--button-primary-color;
+        $bgColor: $--color-white;
+        $borderColor: $color;
+      } @else if ($type == text) {
+        $textColor: $color;
+        $bgColor: $--color-white;
+        $borderColor: transparent;
+      } @else {
+        $textColor: $--color-white;
+        $bgColor: $color;
+        $borderColor: $color;
+      }
+
+      background-color: $bgColor;
+      /* light模式 */
+      @include when(light) {
+        @if (not $isDefaultOrText) {
+          background-color: mix($--color-white, $bgColor, 90%);
+          color: $color;
+          border-color: mix($--color-white, $borderColor, 40%);
+          &:hover {
+            color: $textColor;
+            border-color: $borderColor;
+            background-color: $bgColor;
+          }
+          &:active {
+            background-color: mix($--color-black, $bgColor, 10%);
+          }
+        } @else {
+          &:hover,
+          &:active {
+            background-color: $bgColor;
+          }
+        }
+      }
+      
+      @if ($type != default) {
+        /* 除default外全部设置border色 */
+        border-color: $borderColor;
+      }
+      @if (not $isDefaultOrText) {
+        /* 除default和text外的border要设置字体色 */
+        color: $textColor;
+        @include when(disabled) {
+          &,
+          &:hover,
+          &:active {
+            color: $--color-white;
+            background-image: none;
+            background-color: mix($--color-white, $bgColor, 40%);
+          }
+        }
+      }
+
+      &:hover {
+        background-color: mix($--color-white, $bgColor, $--button-hover-tint-percent);
+        border-color: mix($--color-white, $borderColor, $--button-hover-tint-percent);
+        @if ($isDefaultOrText) {
+          /* default时改变字体色 */
+          color: mix($--color-white, $textColor, $--button-hover-tint-percent);
+        }
+      }
+      &:active {
+        border-color: $borderColor;
+        @if ($isDefaultOrText) {
+          color: $textColor;
+          background-color: mix($--color-white, $--button-primary-fill, 90%);
+        } @else {
+          background-color: mix($--color-black, $bgColor, 10%);
+        }
+      }
+
+      @if ($type == text) {
+        @include when(disabled) {
+          &,
+          &:hover,
+          &:active {
+            border-color: $borderColor;
+          }
+        }
+      }
+    }
+  }
+
+  /* size构造 */
+  @include m(small) {
+    padding: $--button-small-padding-vertical $--button-small-padding-horizontal;
+    font-size: $--button-small-font-size;
+  }
+  @include m(large) {
+    padding: $--button-large-padding-vertical $--button-large-padding-horizontal;
+    font-size: $--button-large-font-size;
+  }
+
+  /* shape */
+  @include when(round) {
+    border-radius: 20px;
+  }
+  @include when(circle) {
+    border-radius: 50%;
+    padding: $--button-padding-vertical;
+  }
+
+  /* span内文本 */
+  [class*="gg-icon"] + span {
+    margin-left: 3px;
+  }
 }

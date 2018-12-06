@@ -1,6 +1,18 @@
-@import "../commom/var.scss";
+@import "../common/var.scss";
 @import "../mixins/mixins.scss";
 
-@include b(col) {
+[class*="gg-col-"] {
+  float: left;
+  box-sizing: border-box;
+}
 
+/* 不带size的样式 */
+@include col();
+
+/* 遍历 size字典 */
+@for $i from 1 through length($--breakpoints-arr) {
+  $item: nth($--breakpoints-size-list, $i);
+  @include res($item) {
+    @include col($item);
+  }
 }

@@ -22,11 +22,11 @@ const install = function (Vue, opts = {}) {
   if (install.installed) return
 
   components.map(component => Vue.component(component.name, component))
-}
 
-Vue.prototype.$GORGEOUS = {
-  size: opts.size || '',
-  zIndex: opts.zIndex || 100
+  Vue.prototype.$GORGEOUS = {
+    size: opts.size || '',
+    zIndex: opts.zIndex || 100
+  }
 }
 
 /* istanbul ignore if */
@@ -38,7 +38,8 @@ export default {
   version: '{{version}}',
   install,
   ...components
-}`
+}
+`
 
 const ComponentNames = Object.keys(Components)
 

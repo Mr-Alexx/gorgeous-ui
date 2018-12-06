@@ -52,6 +52,36 @@
   }
 }
 
+/* Col
+ --------------------- */
+@mixin col ($prefix: "gg-col", $size: "") {
+  $str: "";
+  @if $size != "" {
+    $str: -#{$size};
+  }
+  .#{$prefix}#{$str}-#{"0"} {
+    display: none;
+  }
+
+  @for $i from 0 through 24 {
+    $w: ($i / 24) * 100%;
+    .#{$prefix}#{$str}-#{$i} {
+      width: $w;
+    }
+    .#{$prefix}#{$str}-offset-#{$i} {
+      margin-left: $w;
+    }
+    .#{$prefix}#{$str}-push-#{$i} {
+      position: relative;
+      left: $w;
+    }
+    .#{$prefix}#{$str}-pull-#{$i} {
+      position: relative;
+      right: $w;
+    }
+  }
+}
+
 /* Placeholder
  -------------------------- */
  @mixin placeholder {
@@ -80,7 +110,6 @@
   }
 }
 
-// element
 @mixin e($element) {
   $E: $element !global;
   $selector: &; // 外层选择器
