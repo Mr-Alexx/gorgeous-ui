@@ -2,6 +2,7 @@
   <div id="app">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <gg-button>测试</gg-button>
+    ==
   </div>
 </template>
 

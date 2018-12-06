@@ -1,0 +1,15 @@
+/* extend like: background,color...
+ -------------------------- */
+@import "../common/var.scss";
+
+@each $type, $color in $--color-list {
+  @at-root {
+    .gg-fill--#{$type} {
+      background-color: $color;
+      color: $--color-white;
+    }
+    .gg-text--#{$type} {
+      color: $color;
+    }
+  }
+}

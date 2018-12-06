@@ -1,6 +1,48 @@
-@import "../commom/var.scss";
+@import "../common/var.scss";
 @import "../mixins/mixins.scss";
+@import '../mixins/utils.scss';
 
 @include b(button-group) {
+  display: inline-block;
+  @include utils-clearfix;
 
+  & + & {
+    margin-left: 10px;
+  }
+
+  > .gg-button {
+    float: left;
+    position: relative;
+    &:not(:first-child):not(:last-child){
+      border-radius: 0;
+    }
+
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:hover,
+    &:active {
+      z-index: 2;
+      border-color: $--button-group-border;
+    }
+    &.gg-button--default {
+      &:hover,
+      &:active {
+        border-color: $--button-primary-fill;
+      }
+    }
+  }
+  .gg-button + .gg-button {
+    margin-left: -1px;
+    border-left-color: $--button-group-border;
+  }
+  .gg-button + .gg-button--default {
+    border-left-color: $--button-default-border;
+  }
 }

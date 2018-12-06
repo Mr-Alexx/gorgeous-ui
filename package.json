@@ -1,11 +1,16 @@
 {
   "name": "gorgeous-ui",
   "version": "0.1.0",
+  "license": "MIT",
   "private": false,
   "description": "A Component Library for Vue.js.",
   "main": "lib/gorgeous-ui.common.js",
+  "bugs": {
+    "url": "https://github.com/Mr-Alexx/gorgeous-ui/issues"
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "demo": "vue-cli-service serve --mode demo",
+    "doc": "vue-cli-service serve --mode doc",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:entry": "node build/build-entry.js",

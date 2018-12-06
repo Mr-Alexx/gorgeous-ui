@@ -7,9 +7,14 @@
 ```
 npm install
 ```
-## 组件开发模式,在examples内写组件demo
+## demo开发模式,入口为examples demo.js
 ```
-npm run serve
+make demo
+```
+
+## doc开发模式,入口为examples main.js
+```
+make doc
 ```
 
 ## 命令行创建组件

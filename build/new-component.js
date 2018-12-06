@@ -68,9 +68,9 @@ export default ${ComponentName}`
 </template>
 
 <script>
-  export default {
-    name: 'Gg${ComponentName}'
-  }
+export default {
+  name: 'Gg${ComponentName}'
+}
 </script>`
   },
   {

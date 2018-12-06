@@ -9,6 +9,12 @@ build-theme:
 build-dev:
 	npm run build:dev
 
+demo:
+	npm run demo
+
+doc:
+	npm run doc
+
 lib:
 	npm run lib
 
@@ -16,7 +22,7 @@ entry:
 	node build/build-entry.js
 
 new:
-	node build/new.js $(filter-out $@,$(MAKECMDGOALS)) && node build/build-entry.js
+	node build/new-component.js $(filter-out $@,$(MAKECMDGOALS)) && node build/build-entry.js
 
 help:
 	@echo "   \033[35mmake\033[0m \033[1m命令使用说明\033[0m"
