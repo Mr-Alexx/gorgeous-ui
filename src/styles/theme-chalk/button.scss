@@ -109,6 +109,14 @@
             background-color: mix($--color-white, $bgColor, 40%);
           }
         }
+      } @else {
+        @include when(disabled) {
+          &,
+          &:hover,
+          &:active {
+            background-color: $bgColor;
+          }
+        }
       }
 
       &:hover {
