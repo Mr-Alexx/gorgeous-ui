@@ -2,5 +2,12 @@
   "button": "./src/components/button/index.js",
   "button-group": "./src/components/button-group/index.js",
   "col": "./src/components/col/index.js",
-  "row": "./src/components/row/index.js"
+  "row": "./src/components/row/index.js",
+  "tooltip": "./src/components/tooltip/index.js",
+  "input": "./src/components/input/index.js",
+  "form": "./src/components/form/index.js",
+  "form-item": "./src/components/form-item/index.js",
+  "tree": "./src/components/tree/index.js",
+  "checkbox": "./src/components/checkbox/index.js",
+  "checkbox-group": "./src/components/checkbox-group/index.js"
 }

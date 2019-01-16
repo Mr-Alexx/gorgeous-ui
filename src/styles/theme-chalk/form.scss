@@ -1,0 +1,41 @@
+@import "../common/var.scss";
+@import "../mixins/mixins.scss";
+
+@include b(form) {
+
+}
+
+@include b(form-item) {
+  line-height: $--input-height;
+  margin-bottom: 20px;
+
+  @include e(label) {
+    padding: 0 10px 0 0;
+    text-align: right;
+    float: left;
+    vertical-align: middle;
+    color: $--color-text-regular;
+    box-sizing: border-box;
+    font-size: $--font-size-base;
+
+    &:before {
+      content: "*";
+      color: $--color-danger;
+      margin-right: 4px;
+    }
+  }
+
+  @include e(content) {
+    // display: inline-block;
+    position: relative;
+  }
+
+  @include e(error) {
+    color: $--color-danger;
+    position: absolute;
+    top: 100%;
+    padding-top: 4px;
+    font-size: $--font-size-mini;
+    line-height: 1;
+  }
+}

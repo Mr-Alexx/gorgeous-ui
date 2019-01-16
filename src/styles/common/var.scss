@@ -9,6 +9,8 @@ $--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 3
 $--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !default;
 $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 $--button-transition: .15s !default;
+$--input-transition: .2s ease-in-out;
+$--ease-transition: all .2s ease-in-out !default;
 
 /* Colors
 -------------------------- */
@@ -97,6 +99,7 @@ $--fill-base: $--color-white !default;
 $--font-path: '../fonts' !default;
 $--font-size-base: 14px !default;
 $--font-size-small: 13px !default;
+$--font-size-mini: 12px !default;
 $--font-size-large: 18px !default;
 $--font-color-disabled-base: #bbb !default;
 $--font-weight-primary: 400 !default;
@@ -126,30 +129,29 @@ $--icon-color-base: $--color-info !default;
 /* Checkbox
 -------------------------- */
 $--checkbox-font-size: 14px !default;
-$--checkbox-font-weight: $--font-weight-primary !default;
 $--checkbox-color: $--color-text-regular !default;
-$--checkbox-input-height: 14px !default;
-$--checkbox-input-width: 14px !default;
-$--checkbox-input-border-radius: $--border-radius-small !default;
-$--checkbox-input-fill: $--color-white !default;
-$--checkbox-input-border: $--border-base !default;
-$--checkbox-input-border-color: $--border-color-base !default;
+$--checkbox-height: 14px !default;
+$--checkbox-width: 14px !default;
+$--checkbox-border-radius: $--border-radius-small !default;
+$--checkbox-fill: $--color-white !default;
+$--checkbox-border: $--border-base !default;
 $--checkbox-icon-color: $--color-white !default;
 
-$--checkbox-disabled-input-border-color: $--border-color-base !default;
-$--checkbox-disabled-input-fill: #edf2fc !default;
+$--checkbox-disabled-border-color: $--border-color-base !default;
+$--checkbox-disabled-fill: #edf2fc !default;
+$--checkbox-disabled-color: $--color-text-placeholder !default;
 $--checkbox-disabled-icon-color: $--color-text-placeholder !default;
 
-$--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
-$--checkbox-disabled-checked-input-border-color: $--border-color-base !default;
+$--checkbox-disabled-checked-fill: $--border-color-extra-light !default;
+$--checkbox-disabled-checked-border-color: $--border-color-base !default;
 $--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
 
 $--checkbox-checked-text-color: $--color-primary !default;
-$--checkbox-checked-input-border-color: $--color-primary !default;
-$--checkbox-checked-input-fill: $--color-primary !default;
+$--checkbox-checked-border-color: $--color-primary !default;
+$--checkbox-checked-fill: $--color-primary !default;
 $--checkbox-checked-icon-color: $--fill-base !default;
 
-$--checkbox-input-border-color-hover: $--color-primary !default;
+$--checkbox-border-color-hover: $--color-primary !default;
 
 $--checkbox-bordered-height: 40px !default;
 $--checkbox-bordered-padding: 9px 20px 9px 10px !default;
@@ -334,19 +336,20 @@ $--notification-danger-color: $--color-danger !default;
 $--input-font-size: $--font-size-base !default;
 $--input-color: $--color-text-regular !default;
 $--input-width: 140px !default;
-$--input-height: 40px !default;
+$--input-height: 34px !default;
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
 $--input-border-radius: $--border-radius-base !default;
-$--input-border-color-hover: $--border-color-hover !default;
+$--input-border-color-hover: $--color-primary-light-3; // $--border-color-hover !default;
 $--input-fill: $--color-white !default;
 $--input-fill-disabled: $--disabled-fill-base !default;
 $--input-color-disabled: $--font-color-disabled-base !default;
-$--input-icon-color: $--color-text-placeholder !default;
+$--input-icon-color: #b5b7bb !default; // $--color-text-placeholder !default;
+$--input-icon-width: 30px !default;
 $--input-placeholder-color: $--color-text-placeholder !default;
 $--input-max-width: 314px !default;
 
-$--input-hover-border: $--border-color-hover !default;
+$--input-hover-border:  $--border-color-hover !default;
 $--input-clear-hover-color: $--color-text-secondary !default;
 
 $--input-focus-border: $--color-primary !default;
@@ -358,13 +361,13 @@ $--input-disabled-color: $--disabled-color-base !default;
 $--input-disabled-placeholder-color: $--color-text-placeholder !default;
 
 $--input-large-font-size: 14px !default;
-$--input-large-height: 36px !default;
+$--input-large-height: 38px !default;
 
 $--input-small-font-size: 13px !default;
-$--input-small-height: 32px !default;
+$--input-small-height: 30px !default;
 
 $--input-mini-font-size: 12px !default;
-$--input-mini-height: 28px !default;
+$--input-mini-height: 26px !default;
 
 /* Cascader
 -------------------------- */

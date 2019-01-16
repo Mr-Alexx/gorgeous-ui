@@ -16,7 +16,11 @@ const router = new VueRouter({
     { path: '/color', component: () => import('./demos/color.vue') },
     { path: '/button', component: () => import('./demos/button.vue') },
     { path: '/test', component: () => import('./demos/test.vue') },
-    { path: '/grid', component: () => import('./demos/grid.vue') }
+    { path: '/grid', component: () => import('./demos/grid.vue') },
+    { path: '/form', component: () => import('./demos/form.vue') },
+    { path: '/input', component: () => import('./demos/input.vue') },
+    { path: '/tree', component: () => import('./demos/tree.vue') },
+    { path: '/checkbox', component: () => import('./demos/checkbox.vue') }
   ]
 })
 

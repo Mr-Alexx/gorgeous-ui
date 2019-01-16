@@ -40,7 +40,8 @@ save(path.join(__dirname, '../components.json'))
   .end('\n')
 
 // 定义index.scss内@import内容
-let indexScssContent = '@import "base.scss";'
+let indexScssContent = `@import "base.scss";
+@import "extend.scss";`
 Object.keys(componentsFile).forEach((key) => {
   indexScssContent += `\n@import "${key}.scss";`
 })

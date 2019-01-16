@@ -157,6 +157,17 @@
   }
 }
 
+// element modifier; ex: gg-input__search--button
+@mixin em($element, $modifier) {
+  $currentSelector: & + $element-separator + $element + $modifier-separator + $modifier;
+  
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
 // 含有子元素的modifier，在modifier前面插入__子元素
 @mixin configurable-m($modifier, $E-flag: false) {
   $selector: &;
