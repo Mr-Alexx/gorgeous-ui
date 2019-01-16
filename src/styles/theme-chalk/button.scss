@@ -166,6 +166,9 @@
   @include when(circle) {
     border-radius: 50%;
     padding: $--button-padding-vertical;
+    [class*="gg-icon"] {
+      vertical-align: baseline; /* 解决-1px带来的不圆问题 */
+    }
   }
 
   /* span内文本 */

@@ -1,0 +1,115 @@
+@import "../common/var.scss";
+@import "../mixins/mixins.scss";
+
+@include b(checkbox) {
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  color: $--checkbox-color;
+  font-size: $--checkbox-font-size;
+
+  & + .gg-checkbox {
+    margin-left: 20px;
+  }
+
+  // hover
+  &:hover {
+    @include e(inner) {
+      border-color: $--checkbox-border-color-hover;
+    }
+  }
+
+  @include e(inner) {
+    position: relative;
+    display: inline-block;
+    width: $--checkbox-width;
+    height: $--checkbox-height;
+    border: $--checkbox-border;
+    vertical-align: text-bottom;
+    border-radius: $--checkbox-border-radius;
+
+    &:after {
+      position: absolute;
+      top: 1px;
+      left: 4px;
+      content: '';
+      width: 4px;
+      height: 8px;
+      border: 2px solid $--color-white;
+      border-left: none;
+      border-top: none;
+      transform: scale(0) rotateZ(45deg);
+      z-index: 1;
+    }
+
+    &,
+    &:after {
+      transition: $--ease-transition;
+    }
+
+    // indeterminate
+    @include when (indeterminate) {
+      background-color: $--checkbox-checked-fill;
+      border-color: $--checkbox-checked-border-color;
+      
+      &:after {
+        top: 7px;
+        left: 3px;
+        margin-top: -1px;
+        width: 8px;
+        border: none;
+        height: 2px;
+        transform: scale(1);
+        border: none;
+        background-color: $--color-white;
+      }
+    }
+  }
+
+  @include e(origin) {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  @include e(label) {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  // 选中状态
+  @include when(checked) {
+    color: $--checkbox-checked-text-color;
+
+    @include e(inner) {
+      background-color: $--checkbox-checked-fill;
+      border-color: $--checkbox-checked-border-color;
+
+      &:after {
+        transform: scale(1) rotateZ(45deg);
+      }
+    }
+  }
+
+  // disabled
+  @include when(disabled) {
+    cursor: not-allowed;
+    color: $--checkbox-disabled-color;
+
+    &:hover {
+      @include e(inner) {
+        border-color: $--checkbox-disabled-border-color;
+      }
+    }
+
+    @include e(inner) {
+      background-color: $--checkbox-disabled-fill;
+      border-color: $--checkbox-disabled-border-color;
+
+      &:after {
+        border-color: $--checkbox-disabled-checked-icon-color;
+      }
+    }
+  }
+}

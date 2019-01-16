@@ -4,12 +4,26 @@ import Button from '../src/components/button'
 import ButtonGroup from '../src/components/button-group'
 import Col from '../src/components/col'
 import Row from '../src/components/row'
+import Tooltip from '../src/components/tooltip'
+import Input from '../src/components/input'
+import Form from '../src/components/form'
+import FormItem from '../src/components/form-item'
+import Tree from '../src/components/tree'
+import Checkbox from '../src/components/checkbox'
+import CheckboxGroup from '../src/components/checkbox-group'
 
 const components = [
   Button,
   ButtonGroup,
   Col,
-  Row
+  Row,
+  Tooltip,
+  Input,
+  Form,
+  FormItem,
+  Tree,
+  Checkbox,
+  CheckboxGroup
 ]
 
 const install = function (Vue, opts = {}) {

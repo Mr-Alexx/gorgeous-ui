@@ -3,6 +3,12 @@
     <h3>grid</h3>
     <div>
       <h3>基础</h3>
+      <gg-row gutter="10">
+        <gg-col span="6" class="gg-fill--primary">a</gg-col>
+        <gg-col span="6" class="gg-fill--secondary">b</gg-col>
+        <gg-col span="6" class="gg-fill--primary">c</gg-col>
+        <gg-col span="6" class="gg-fill--secondary">d</gg-col>
+      </gg-row>
       <gg-row gutter="20">
         <gg-col class="gg-fill--primary" span="6">aa</gg-col>
         <gg-col class="gg-fill--secondary" span="12">bb</gg-col>
@@ -46,7 +52,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .gg-row {
     border: 1px solid #ebebeb;
     padding: 10px;

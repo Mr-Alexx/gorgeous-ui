@@ -1,0 +1,158 @@
+@import "../common/var.scss";
+@import "../mixins/mixins.scss";
+
+// 通用样式占位符
+%icon {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  text-align: center;
+  width: $--input-icon-width;
+  color: $--input-icon-color;
+  border-radius: $--input-border-radius;
+}
+
+@include b(input) {
+  height: $--input-height;
+  line-height: $--input-height;
+  box-sizing: border-box;
+  position: relative;
+
+  // disabled
+  @include when(disabled) {
+    @include e(inner) {
+      cursor: not-allowed;
+      border-color: $--input-disabled-border;
+      background-color: $--input-disabled-fill;
+      color: $--input-disabled-color;
+    }
+  }
+
+  // size
+  @include m(large) {
+    height: $--input-large-height;
+    line-height: $--input-large-height;
+  }
+  @include m(small) {
+    height: $--input-small-height;
+    line-height: $--input-small-height;
+    font-size: $--input-small-font-size;
+  }
+  @include m(mini) {
+    height: $--input-mini-height;
+    line-height: $--input-mini-height;
+    font-size: $--input-mini-font-size;
+  }
+
+  // group
+  @include m(group) {
+    display: table;
+    width: 100%;
+  }
+
+  // 有icon时
+  @include m(prefix) {
+    @include e(inner) {
+      padding-left: $--input-icon-width;
+    }
+  }
+  @include m(suffix) {
+    @include e(inner) {
+      padding-right: $--input-icon-width;
+    }
+  }
+  @include m(search) {
+    @include e(inner) {
+      padding-right: $--input-icon-width;
+    }
+
+    &:hover {
+      @include e(inner) {
+        border-color: $--input-border-color-hover;
+      }
+    }
+  }
+
+  // prepend
+
+  // append
+  @include m(append) {
+    width: 100%;
+    @include e(inner) {
+      display: table-cell;
+      padding-right: 10px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  @include e(inner) {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: $--border-base;
+    color: $--input-color;
+    font-size: $--input-font-size;
+    background-color: $--input-fill;
+    padding: 0 10px;
+    border-radius: $--input-border-radius;
+    transition: $--input-transition;
+    vertical-align: bottom;
+
+    &::-webkit-input-placeholder {
+      color: $--input-placeholder-color;
+    }
+
+    &:hover {
+      border-color: $--input-border-color-hover;
+    }
+
+    &:focus {
+      outline: 0;
+      border-color: $--color-primary;
+      box-shadow: 0 0 0 2px rgba(218, 62, 155, 0.2);
+    }
+  }
+
+  // icon
+  @include e(prefix) {
+    @extend %icon;
+    left: 0;
+  }
+  @include e(suffix) {
+    @extend %icon;
+    right: 0;
+  }
+
+  // clear
+  @include e(clear) {
+    cursor: pointer;
+  }
+
+  // search
+  @include e(search) {
+    @extend %icon;
+    right: 0;
+  }
+  @include em(search, button) {
+    position: relative;
+    left: -1px;
+    display: table-cell;
+    cursor: pointer;
+    padding: 0 15px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: $--color-primary;
+    color: $--color-white;
+    transition: $--input-transition;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:hover {
+      background-color: $--color-primary-light-3;
+    }
+    &:active {
+      background-color: $--color-primary;
+    }
+  }
+}
