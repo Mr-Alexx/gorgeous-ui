@@ -9,5 +9,7 @@
   "form-item": "./src/components/form-item/index.js",
   "tree": "./src/components/tree/index.js",
   "checkbox": "./src/components/checkbox/index.js",
-  "checkbox-group": "./src/components/checkbox-group/index.js"
+  "checkbox-group": "./src/components/checkbox-group/index.js",
+  "radio": "./src/components/radio/index.js",
+  "radio-group": "./src/components/radio-group/index.js"
 }

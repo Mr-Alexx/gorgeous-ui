@@ -11,6 +11,8 @@ import FormItem from '../src/components/form-item'
 import Tree from '../src/components/tree'
 import Checkbox from '../src/components/checkbox'
 import CheckboxGroup from '../src/components/checkbox-group'
+import Radio from '../src/components/radio'
+import RadioGroup from '../src/components/radio-group'
 
 const components = [
   Button,
@@ -23,7 +25,9 @@ const components = [
   FormItem,
   Tree,
   Checkbox,
-  CheckboxGroup
+  CheckboxGroup,
+  Radio,
+  RadioGroup
 ]
 
 const install = function (Vue, opts = {}) {

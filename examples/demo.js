@@ -20,6 +20,7 @@ const router = new VueRouter({
     { path: '/form', component: () => import('./demos/form.vue') },
     { path: '/input', component: () => import('./demos/input.vue') },
     { path: '/tree', component: () => import('./demos/tree.vue') },
+    { path: '/radio', component: () => import('./demos/radio.vue') },
     { path: '/checkbox', component: () => import('./demos/checkbox.vue') }
   ]
 })

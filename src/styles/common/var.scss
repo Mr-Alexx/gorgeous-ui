@@ -184,28 +184,28 @@ $--checkbox-button-checked-border-color: $--color-primary !default;
 $--radio-font-size: 14px !default;
 $--radio-font-weight: $--font-weight-primary !default;
 $--radio-color: $--color-text-regular !default;
-$--radio-input-height: 14px !default;
-$--radio-input-width: 14px !default;
-$--radio-input-border-radius: $--border-radius-circle !default;
-$--radio-input-fill: $--color-white !default;
-$--radio-input-border: $--border-base !default;
-$--radio-input-border-color: $--border-color-base !default;
+$--radio-height: 14px !default;
+$--radio-width: 14px !default;
+$--radio-border-radius: $--border-radius-circle !default;
+$--radio-fill: $--color-white !default;
+$--radio-border: $--border-base !default;
+$--radio-border-color: $--border-color-base !default;
 $--radio-icon-color: $--color-white !default;
 
-$--radio-disabled-input-border-color: $--disabled-border-base !default;
-$--radio-disabled-input-fill: $--disabled-fill-base !default;
+$--radio-disabled-border-color: $--disabled-border-base !default;
+$--radio-disabled-fill: $--disabled-fill-base !default;
 $--radio-disabled-icon-color: $--disabled-fill-base !default;
 
-$--radio-disabled-checked-input-border-color: $--disabled-border-base !default;
-$--radio-disabled-checked-input-fill: $--disabled-fill-base !default;
+$--radio-disabled-checked-border-color: $--disabled-border-base !default;
+$--radio-disabled-checked-fill: $--disabled-fill-base !default;
 $--radio-disabled-checked-icon-color: $--color-text-placeholder !default;
 
 $--radio-checked-text-color: $--color-primary !default;
-$--radio-checked-input-border-color: $--color-primary !default;
-$--radio-checked-input-fill: $--color-white !default;
+$--radio-checked-border-color: $--color-primary !default;
+$--radio-checked-fill: $--color-primary !default;
 $--radio-checked-icon-color: $--color-primary !default;
 
-$--radio-input-border-color-hover: $--color-primary !default;
+$--radio-border-color-hover: $--color-primary !default;
 
 $--radio-bordered-height: 40px !default;
 $--radio-bordered-padding: 12px 20px 0 10px !default;

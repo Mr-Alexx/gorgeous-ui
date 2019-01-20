@@ -18,9 +18,7 @@
       class="gg-checkbox__origin">
     <span v-if="label || $slots.default" class="gg-checkbox__label">
       <slot></slot>
-      <template v-if="!$slots.default">
-        {{ label }}
-      </template>
+      <template v-if="!$slots.default">{{ label }}</template>
     </span>
   </label>
 </template>

@@ -1,0 +1,98 @@
+@import "../common/var.scss";
+@import "../mixins/mixins.scss";
+
+@include b(radio) {
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  color: $--radio-color;
+  font-size: $--radio-font-size;
+
+  & + .gg-radio {
+    margin-left: 20px;
+  }
+
+  // hover
+  &:hover {
+    @include e(inner) {
+      border-color: $--radio-border-color-hover;
+    }
+  }
+
+  @include e(inner) {
+    position: relative;
+    display: inline-block;
+    width: $--radio-width;
+    height: $--radio-height;
+    border: $--radio-border;
+    vertical-align: text-bottom;
+    border-radius: $--radio-border-radius;
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '';
+      width: 10px;
+      height: 10px;
+      margin-left: -5px;
+      margin-top: -5px;
+      border-radius: 50%;
+      transform: scale(0);
+      z-index: 1;
+      background-color: $--radio-checked-fill;
+    }
+
+    &,
+    &:after {
+      transition: $--ease-transition;
+    }
+  }
+
+  @include e(origin) {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  @include e(label) {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  // 选中状态
+  @include when(checked) {
+    color: $--radio-checked-text-color;
+
+    @include e(inner) {
+      // background-color: $--radio-checked-fill;
+      border-color: $--radio-checked-border-color;
+
+      &:after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  // disabled
+  @include when(disabled) {
+    cursor: not-allowed;
+    // color: $--radio-disabled-color;
+
+    &:hover {
+      @include e(inner) {
+        border-color: $--radio-disabled-border-color;
+      }
+    }
+
+    @include e(inner) {
+      background-color: $--radio-disabled-fill;
+      border-color: $--radio-disabled-border-color;
+
+      &:after {
+        border-color: $--radio-disabled-checked-icon-color;
+      }
+    }
+  }
+}
