@@ -34,3 +34,29 @@ export function findComponentsDownward (context, componentName) {
   }
   return _children
 }
+
+
+// 判断数据类型
+export function typeOf (data) {
+  const type = Object.prototype.toString.call(data)
+  return type.substring(8, type.length - 1).toLowerCase()
+}
+
+// 深拷贝
+export function  deepCopy (data) {
+  const type = typeOf(data)
+  if (type !== 'array' && type !== 'object') return data
+
+  let copyData = type === 'array' ? [] : {}
+
+  if (type === 'array') {
+    for (let i = 0; i < data.length; i++) {
+      copyData.push(deepCopy(data[i]))
+    }
+  } else {
+    for (let key in data) {
+      copyData[key] = deepCopy(data[key])
+    }
+  }
+  return copyData
+}

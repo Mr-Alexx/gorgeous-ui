@@ -4,6 +4,17 @@
 
 <script>
 export default {
-  name: 'GgTree'
+  name: 'GgTree',
+  props: {
+    data: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    showCheckbox: Boolean,
+    multiple: Boolean,
+    accordion: Boolean
+  }
 }
 </script>
